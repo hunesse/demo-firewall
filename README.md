@@ -1,8 +1,6 @@
 # Documentation sur les différentes solutions de pare-feu
 
 ## 1. Pare-feu basé sur le filtrage des paquets (Packet Filtering Firewall)
-
-### Description
 Le pare-feu à filtrage de paquets est l’une des solutions les plus basiques et les plus courantes. Il examine les paquets de données transitant sur le réseau en fonction de règles prédéfinies, telles que l’adresse IP source, l’adresse IP de destination, le port, le protocole, etc.
 
 ### Avantages :
@@ -15,8 +13,6 @@ Le pare-feu à filtrage de paquets est l’une des solutions les plus basiques e
 - **Aucun suivi des connexions** : Chaque paquet est traité indépendamment, ce qui peut causer des failles de sécurité dans des situations complexes.
 
 ## 2. Pare-feu avec inspection d’état des paquets (Stateful Inspection Firewall)
-
-### Description
 Ce type de pare-feu va plus loin que le filtrage des paquets en surveillant l'état des connexions réseau. Il analyse non seulement les données contenues dans chaque paquet, mais aussi le contexte dans lequel ces paquets sont envoyés, en prenant en compte l’état des sessions.
 
 ### Avantages :
@@ -29,8 +25,6 @@ Ce type de pare-feu va plus loin que le filtrage des paquets en surveillant l'é
 - **Configuration plus complexe** : Sa mise en place est plus compliquée que celle des pare-feux à filtrage de paquets.
 
 ## 3. Pare-feu proxy (Proxy Firewall)
-
-### Description
 Le pare-feu proxy agit comme un intermédiaire entre un utilisateur et une ressource cible. Il intercepte toutes les demandes, les examine, et les filtre avant de les transmettre au serveur de destination.
 
 ### Avantages :
@@ -44,8 +38,6 @@ Le pare-feu proxy agit comme un intermédiaire entre un utilisateur et une resso
 - **Gestion complexe** : Sa configuration et sa maintenance exigent des compétences techniques avancées.
 
 ## 4. Pare-feu de nouvelle génération (NGFW, Next-Generation Firewall)
-
-### Description
 Les pare-feux de nouvelle génération offrent une sécurité avancée en intégrant des fonctions comme la détection d’intrusions (IDS/IPS), le contrôle des applications et une gestion centralisée. Ils peuvent analyser en profondeur le trafic réseau pour détecter et prévenir des attaques sophistiquées.
 
 ### Avantages :
@@ -59,8 +51,6 @@ Les pare-feux de nouvelle génération offrent une sécurité avancée en intég
 - **Complexité de gestion** : La configuration et l’administration sont complexes, et exigent des compétences techniques spécialisées.
 
 ## 5. Pare-feu sur hôte (Host-Based Firewall)
-
-### Description
 Un pare-feu basé sur un hôte est installé directement sur un appareil spécifique (serveur ou ordinateur) pour contrôler le trafic entrant et sortant à partir de cet appareil seul, protégeant ainsi les hôtes contre les attaques externes.
 
 ### Avantages :
@@ -74,8 +64,6 @@ Un pare-feu basé sur un hôte est installé directement sur un appareil spécif
 - **Consommation de ressources locales** : L’utilisation d’un pare-feu sur chaque appareil peut affecter ses performances.
 
 ## 6. Pare-feu cloud (Cloud Firewall)
-
-### Description
 Les pare-feux cloud, aussi appelés pare-feux en tant que service (FWaaS), sont des solutions basées sur le cloud qui filtrent le trafic entrant et sortant dans les infrastructures cloud.
 
 ### Avantages :
