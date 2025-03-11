@@ -1,33 +1,36 @@
-version: '3.8'
-
 services:
   server:
-    image: debian:bookworm
+    image: debian:12
     container_name: server
     hostname: server
     networks:
       private_net:
-        ipv4_address: 192.168.56.10
-    volumes:
-      - ./server/nginx.conf:/etc/nginx/nginx.conf:ro
-      ports:
-        "80:80"
-            "443:443"
-        command: ["bash", "-c", "apt update && apt install -y nginx ufw && ufw allow 22 && ufw allow 80 && ufw allow 443 && ufw enable && nginx -g 'daemon off;'"]
-
+        ipv4_address: 192.168.0.2
+    privileged: true
+    command: /bin/bash -c "
+      apt update &&
+      apt install -y nginx ufw &&
+      echo '<h1>Bienvenue sur le serveur sécurisé</h1>' > /var/www/html/index.html &&
+      ufw allow 80/tcp &&
+      ufw allow 443/tcp &&
+      ufw enable &&
+      nginx -g 'daemon off;'"
+    ports:
+      - "8080:80"
 
   client:
-    image: debian:bookworm
+    image: debian:12
     container_name: client
     hostname: client
     networks:
       private_net:
-        ipv4_address: 192.168.56.11
-    command: ["bash", "-c", "apt update && apt install -y curl nmap && tail -f /dev/null"]
+        ipv4_address: 192.168.0.3
+    command: /bin/bash -c "apt update && apt install -y curl && tail -f /dev/null"
 
 networks:
   private_net:
     driver: bridge
     ipam:
       config:
-        subnet: 192.168.56.0/24
+        - subnet: 192.168.0.0/24
+
