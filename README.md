@@ -4,10 +4,10 @@
 
 Il existe deux grands types de pare-feu : le firewall matériel et le firewall logiciel. Ces deux dispositifs peuvent être utilisés conjointement ou séparément.
 
-## Firewall matériel  
+### Firewall matériel  
 Le pare-feu matériel s’installe à l’entrée du réseau (DMZ) . Il est particulièrement prisé par les professionnels, car il protège l’ensemble du réseau local, y compris les ordinateurs et les serveurs.
 
-## Firewall logiciel  
+### Firewall logiciel  
 Le pare-feu logiciel est installé directement sur les postes de travail, ce qui le rend idéal pour les télétravailleurs. Il remplit la même fonction qu’un firewall matériel, mais à un niveau local. Son rôle est de contrôler les informations entrantes et sortantes et de les bloquer si nécessaire, selon les règles définies.
 
 ## Les firewalls logiciels
