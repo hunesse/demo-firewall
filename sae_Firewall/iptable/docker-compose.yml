@@ -1,0 +1,66 @@
+services:
+  server:
+    image: debian:12
+    container_name: server
+    hostname: server
+    networks:
+      private_net:
+        ipv4_address: 192.168.0.2
+    privileged: true
+    command: >
+      bash -c '
+      export DEBIAN_FRONTEND=noninteractive;
+      
+      # Désactiver l'exécution automatique des services
+      echo "#!/bin/sh\nexit 101" > /usr/sbin/policy-rc.d; chmod +x /usr/sbin/policy-rc.d;
+
+      apt update;
+      apt install -y nginx iptables;
+      
+      echo "<h1>Bienvenue sur le serveur sécurisé</h1>" > /var/www/html/index.html;
+
+      # Configuration iptables
+      iptables -F;
+      iptables -P INPUT DROP;
+      iptables -P FORWARD DROP;
+      iptables -P OUTPUT ACCEPT;
+
+      # Autoriser HTTP, HTTPS et SSH
+      iptables -A INPUT -p tcp --dport 80 -j ACCEPT;
+      iptables -A INPUT -p tcp --dport 443 -j ACCEPT;
+      iptables -A INPUT -p tcp --dport 22 -j ACCEPT;
+
+      # Autoriser les connexions déjà établies
+      iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT;
+
+      # Sauvegarde des règles iptables
+      iptables-save > /etc/iptables.rules;
+
+      # Démarrer Nginx manuellement
+      nginx -g "daemon off;"
+      '
+    ports:
+      - "8080:80"
+
+  client:
+    image: debian:12
+    container_name: client
+    hostname: client
+    networks:
+      private_net:
+        ipv4_address: 192.168.0.3
+    command: >
+      bash -c '
+      export DEBIAN_FRONTEND=noninteractive;
+      apt update;
+      apt install -y curl nmap;
+      tail -f /dev/null
+      '
+
+networks:
+  private_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.0.0/24
+
