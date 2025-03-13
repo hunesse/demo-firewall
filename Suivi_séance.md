@@ -47,5 +47,5 @@
 
 ## Séance n° 8
 * 13/03/2025 - [13h-16h]
-* essaie d'ajout de la DMZ
-* Prochaine séance -->
+* essaie d'ajout de la DMZ, des commandes du docker compose ne s'applique pas sur la VM. Commencement du diaporama, fin de la documentation.
+* Prochaine séance --> Appelez les commande via un sous-programme
