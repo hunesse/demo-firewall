@@ -36,6 +36,16 @@
 * Prochaine séance --> terminé la mise en place des dockers
 
 ## Séance n° 6
-* 11/03/2025 - [13-16h0]
-* On a le docker web/uwf et un debian qui testera 
-* Prochaine séance --> Paramètrage et test avec nmap de uwf
+* 11/03/2025 - [13h-16h]
+* On a le docker web/ufw et un debian qui testera 
+* Prochaine séance --> Paramètrage et test avec nmap de ufw
+
+## Séance n° 7
+* 12/03/2025 - [13h-16h]
+* Essaie IP table
+* Prochaine séance --> Faire la DMZ
+
+## Séance n° 8
+* 13/03/2025 - [13h-16h]
+* essaie d'ajout de la DMZ
+* Prochaine séance -->
