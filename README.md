@@ -1,7 +1,10 @@
-
-
 #### Kermarrec Gaëtan
 #### Djenadi Arno
+
+# Synthèse SAE Firewall
+
+### Objectif final
+L'objectif final du projet est de mettre en place un firewall et de sécuriser un serveur web dans un environnement virtualisé. Il s'agit de démontrer l'efficacité du firewall en bloquant certaines connexions tout en autorisant les flux légitimes, ainsi que de réduire la surface d’attaque du serveur web Nginx. Le projet comprend aussi la mise en place d'une DMZ pour protéger le réseau interne, avec des démonstrations pratiques de sécurité. L'ensemble doit être automatisé via des scripts et documenté sur un dépôt GitHub, avec une soutenance finale.
 
 ### Démarche réalisé
 Nous avons du passer sur une autre solution que Vagrant car sur nos deux PC la virtualisation n'était pas compatible donc nous sommes passés sur du docker.
@@ -23,3 +26,5 @@ Puis pour passer à la dmz commencez d'abord par stopper tout les conteneurs fai
 Une fois cela fait rendez-vous dans le dossier ufw_dmz : `cd demo-firewall/sae-Firewall/ufw_dmz`
 Une fois dans le dossier il faut faire la commande : `docker compose up -d` ce qui va lancer les différents conteneurs.
 Puis attendre 20 secondes que les paquets se téléchargent puis faire la commande : `chmod +x demo.sh` et `chmod +x setup_fw.sh` et après : `./setup_fw.sh ` puis après quelques secondes après la fin du script `./demo.sh` et vous allez pouvoir voir les résultats des commandes curl et nmap sur l'adresse IP du serveur et des plages d'adresses IP.
+
+Nous avons aussi essayé de mettre en place un serveur avec seulement des commandes Iptables mais on a préféré se concentrer sur ufw et ufw avec une DMZ.
