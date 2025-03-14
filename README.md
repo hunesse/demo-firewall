@@ -4,7 +4,7 @@
 # Synthèse SAE Firewall
 
 ### Objectif final
-L'objectif final du projet est de mettre en place un firewall et de sécuriser un serveur web dans un environnement virtualisé. Il s'agit de démontrer l'efficacité du firewall en bloquant certaines connexions tout en autorisant les flux légitimes, ainsi que de réduire la surface d’attaque du serveur web Nginx. Le projet comprend aussi la mise en place d'une DMZ pour protéger le réseau interne, avec des démonstrations pratiques de sécurité. L'ensemble doit être automatisé via des scripts et documenté sur un dépôt GitHub, avec une soutenance finale.
+L'objectif final du projet est de mettre en place un firewall et de sécuriser un serveur web dans un environnement virtualisé. Il s'agit de démontrer l'efficacité du firewall en bloquant certaines connexions tout en autorisant les flux légitimes, ainsi que de réduire la surface d’attaque du serveur web Nginx. Le projet comprend aussi la mise en place d'une DMZ pour protéger le réseau interne, avec des démonstrations pratiques de sécurité.
 
 ### Démarche réalisé
 Nous avons du passer sur une autre solution que Vagrant car sur nos deux PC la virtualisation n'était pas compatible donc nous sommes passés sur du docker.
