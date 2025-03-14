@@ -17,3 +17,9 @@ Tout d'abord après avoir télécharger le zip de notre dépot l'arborescence de
 Une fois cela fait rendez-vous dans le dossier ufw : `cd demo-firewall/sae-Firewall/ufw`.
 Une fois dans le dossier il faut faire la commande : `docker compose up -d` ce qui va lancer les différents conteneurs.
 Puis attendre 20 secondes que les paquets se téléchargent puis faire la commande : `chmod +x demo.sh` et après : `./demo.sh` et vous allez pouvoir voir les résultats des commandes curl et nmap sur l'adresse IP du serveur.
+
+Puis pour passer à la dmz commencez d'abord par stopper tout les conteneurs faire : `chmod +x stop.sh` et après `./stop.sh`
+
+Une fois cela fait rendez-vous dans le dossier ufw_dmz : `cd demo-firewall/sae-Firewall/ufw_dmz`
+Une fois dans le dossier il faut faire la commande : `docker compose up -d` ce qui va lancer les différents conteneurs.
+Puis attendre 20 secondes que les paquets se téléchargent puis faire la commande : `chmod +x demo.sh` et `chmod +x setup_fw.sh` et après : `./setup_fw.sh ` puis après quelques secondes après la fin du script `./demo.sh` et vous allez pouvoir voir les résultats des commandes curl et nmap sur l'adresse IP du serveur et des plages d'adresses IP.
